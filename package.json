@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/schmich/instascan",
   "devDependencies": {
+    "@types/node": "10.12.18",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
