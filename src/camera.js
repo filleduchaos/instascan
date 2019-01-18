@@ -45,19 +45,11 @@ class Camera {
   }
 
   static async getCameras() {
-    await this._ensureAccess();
-
     let devices = await navigator.mediaDevices.enumerateDevices();
 
     return devices
       .filter(d => d.kind === 'videoinput')
       .map(d => new Camera(d.deviceId, cameraName(d.label)));
-  }
-
-  static async _ensureAccess() {
-    return this._wrapErrors(async () => {
-      await navigator.mediaDevices.getUserMedia({ video: true });
-    });
   }
 
   static async _wrapErrors(fn) {
